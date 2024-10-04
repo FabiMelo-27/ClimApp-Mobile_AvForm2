@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>ClimApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" >
+
+  <div id="imagem">
+    <img src="../../assets/img/logo.png" alt="">
+  </div>
+
+  <h1 id="titulo">Bem-vindo ao ClimApp!</h1>
+
+  <p id="texto">Seu aplicativo de previsão do tempo confiável e fácil de usar.</p>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>O que oferecemos:</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ul>
+        <li>Previsão do tempo atual</li>
+        <li>Previsão para os próximos dias</li>
+        <li>Informações detalhadas sobre temperatura, umidade e mais</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-button expand="block" [routerLink]="['/previsao-atual']">Ver Previsão Atual</ion-button>
+
+<ion-button expand="block" [routerLink]="['/previsao-semana']">Previsão da Semana</ion-button>
+
+</ion-content>
+
+<ion-footer>
+
+
+     <p id="footer"> Desenvolvido por Fabíola Gaspar</p>
+
+      <div id="links">
+      <a href="https://github.com/FabiMelo-27" target="_blank"><ion-icon name="logo-github"></ion-icon></a> |
+      <a href="https://www.linkedin.com/in/fabiola-melo-6a285a1bb/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+    </div>
+
+
+</ion-footer>
+
+
+

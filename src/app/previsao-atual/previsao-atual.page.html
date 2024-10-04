@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Previsão Atual</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Escolha a Cidade:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-select [(ngModel)]="cidade" (ionChange)="onCityChange()">
+        <ion-select-option value="Rio de Janeiro">Rio de Janeiro</ion-select-option>
+        <ion-select-option value="São Paulo">São Paulo</ion-select-option>
+        <ion-select-option value="Belo Horizonte">Belo Horizonte</ion-select-option>
+        <ion-select-option value="Salvador">Salvador</ion-select-option>
+        <ion-select-option value="Curitiba">Curitiba</ion-select-option>
+        <ion-select-option value="Outro">Digite uma cidade</ion-select-option>
+      </ion-select>
+
+      <div *ngIf="cidade === 'Outro'">
+        <ion-input [(ngModel)]="cidadeDigitada" placeholder="Digite a cidade"></ion-input>
+        <ion-button (click)="confirmarCidade()">Confirmar</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <h2 id="titulo">Tempo agora em {{ cidade === 'Outro' ? cidadeDigitada : cidade }}</h2>
+
+  <ion-card *ngIf="weather">
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="thermometer-outline" slot="start"></ion-icon>
+        <ion-label>Temperatura: {{ weather.main.temp - 273.15 | number:'1.0-0' }}°C</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="water-outline" slot="start"></ion-icon>
+        <ion-label>Umidade: {{ weather.main.humidity }}%</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="eye-outline" slot="start"></ion-icon>
+        <ion-label>Visibilidade: {{ weather.visibility / 1000 }} km</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="speedometer-outline" slot="start"></ion-icon>
+        <ion-label>Pressão: {{ weather.main.pressure }} hPa</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" [routerLink]="['/previsao-semana', cidade === 'Outro' ? cidadeDigitada : cidade]">Ver Previsão da Semana</ion-button>
+</ion-content>
