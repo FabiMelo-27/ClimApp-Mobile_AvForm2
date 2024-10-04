@@ -72,8 +72,6 @@ Este projeto foi desenvolvido como parte de um trabalho acadêmico. Contribuiç�
 ## Autor
 [[Fabíola Gaspar](https://www.linkedin.com/in/fabiola-melo-6a285a1bb/)]
 
-Show Image
-
 
 ## Licença
 
