@@ -10,7 +10,7 @@ O aplicativo oferece uma experiência de usuário rica e interativa, permitindo 
 2. Tela de previsão atual
 3. Tela de previsão da semana
 
-![Tela Inicial do ClimApp](<img src="src/assets/img/telaInicial.png" width="300" alt="Tela Inicial">)
+![Tela Inicial do ClimApp](src/assets/img/telaInicial.png.)
 
 ## Funcionalidades
 
